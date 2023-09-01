@@ -12,6 +12,9 @@ const Toughts = require("./models/Toughts");
 const User = require("./models/User");
 
 const toughtsRoutes = require("./routers/toughtsRouters");
+const authRoutes = require("./routers/authRoutes");
+
+
 const ToughtsController = require("./controllers/ToughtsController");
 
 app.engine("handlebars", exphbs.engine());
@@ -56,6 +59,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/toughts", toughtsRoutes);
+app.use("/", authRoutes);
 app.get("/", ToughtsController.showToughts);
 
 conn
