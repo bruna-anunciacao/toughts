@@ -39,6 +39,19 @@
   padding: 2rem;
 }
 
+/* Mensagem */
+.message {
+  color:#0197bd;
+  padding: 0.5rem;
+  background: #9cfcff;
+  border: 1px solid #08daff;
+  border-radius: 0.5rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-weight: bold;
+  width: fit-content;
+}
+
 /* Registro */
 .authContainer {
   max-width: 30rem;

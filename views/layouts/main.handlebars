@@ -13,11 +13,21 @@
     <a href="/" id="logo"><img src="/img/toughts.png" alt="Logo toughts" width="64"></a>
     <ul>
       <li><a href="/">Pensamentos</a></li>
-      <li><a href="/login">Entrar</a></li>
-      <li><a href="/register">Registrar</a></li>
+      {{#if session.userid}}
+        <li><a href="/profile">Perfil</a></li>
+        <li><a href="/logout">Sair</a></li>
+      {{else}}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Registrar</a></li>
+      {{/if}}
     </ul>
   </div>
   <div class="container">
+    {{#if messages.message}}
+      <div class="message">
+        {{messages.message}}
+      </div>
+    {{/if}}
     {{{body}}}
   </div>  
   <footer><p><span>Toughts</span> &copy; 2023</p></footer>
