@@ -6,6 +6,26 @@ module.exports = class AuthController {
     static login(req, res) {
         res.render('auth/login')
     }
+    static async loginPost(req, res) {
+        const {email, password} = req.body;
+        const user = await User.findOne({where: {email}});
+        if (!user) {
+            req.flash('message', 'Usuário não encontrado');
+            res.render('auth/login');
+            return;
+        }
+        const checkPassword = bcrypt.compareSync(password, user.password);
+        if (!checkPassword) {
+            req.flash('message', 'Senha incorreta');
+            res.render('auth/login');
+            return;
+        }
+        req.session.userid = user.id;
+        req.flash('message', 'Login efetuado com sucesso');
+        req.session.save(() => {
+            res.redirect('/');
+        })
+    }
     static register(req, res) {
         res.render('auth/register')
     }
