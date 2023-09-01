@@ -8,10 +8,13 @@ const app = express();
 
 const conn = require("./db/conn");
 
-const Toughts = require('./models/Toughts')
-const User = require('./models/User')
+const Toughts = require("./models/Toughts");
+const User = require("./models/User");
 
-app.engine('handlebars', exphbs.engine());
+const toughtsRoutes = require("./routers/toughtsRouters");
+const ToughtsController = require("./controllers/ToughtsController");
+
+app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 
 app.use(
@@ -41,16 +44,19 @@ app.use(
   })
 );
 
-app.use(flash())
+app.use(flash());
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 app.use((req, res, next) => {
-  if (req.session.userid){
+  if (req.session.userid) {
     res.locals.session = req.session;
   }
   next();
-})
+});
+
+app.use("/toughts", toughtsRoutes);
+app.get("/", ToughtsController.showToughts);
 
 conn
   .sync()
