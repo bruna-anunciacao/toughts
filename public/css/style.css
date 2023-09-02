@@ -41,7 +41,7 @@
 
 /* Mensagem */
 .message {
-  color:#0197bd;
+  color: #0197bd;
   padding: 0.5rem;
   background: #9cfcff;
   border: 1px solid #08daff;
@@ -61,7 +61,8 @@
   gap: 1rem;
 }
 
-.authContainer h2, .toughtFormContainer h1 {
+.authContainer h2,
+.toughtFormContainer h1 {
   color: #fff;
   border-left: 4px solid #c5850f;
   padding-left: 1rem;
@@ -84,7 +85,8 @@
   margin-bottom: 0.5rem;
 }
 
-.formControl input, .formControl textarea {
+.formControl input,
+.formControl textarea {
   padding: 0.7rem;
   border: 1px solid #c5850f;
   border-radius: 0.5rem;
@@ -92,8 +94,8 @@
   color: #fff;
 }
 
-
-form input[type='submit'], .btn {
+form input[type="submit"],
+.btn {
   background: none;
   color: #c5850f;
   border: 2px dashed #c5850f;
@@ -106,7 +108,8 @@ form input[type='submit'], .btn {
   transition: 0.5s;
 }
 
-form input[type='submit']:hover, .btn:hover {
+form input[type="submit"]:hover,
+.btn:hover {
   background: #c5850f;
   color: #fff;
 }
@@ -132,7 +135,8 @@ form input[type='submit']:hover, .btn:hover {
   color: #fff;
 }
 
-.toughtFormContainer form, .toughtFormContainer h1 {
+.toughtFormContainer form,
+.toughtFormContainer h1 {
   width: 40%;
 }
 
@@ -141,7 +145,6 @@ form input[type='submit']:hover, .btn:hover {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-
 }
 
 .titleContainer h2 {
@@ -210,7 +213,8 @@ form input[type='submit']:hover, .btn:hover {
   color: #c5850f;
 }
 
-.homeHeader p, .homeHeader form {
+.homeHeader p,
+.homeHeader form {
   margin-bottom: 1.2rem;
 }
 
@@ -224,7 +228,7 @@ form input[type='submit']:hover, .btn:hover {
   width: 30rem;
 }
 
-#searchText::placeholder{
+#searchText::placeholder {
   color: #c5850f;
 }
 
@@ -248,7 +252,9 @@ form input[type='submit']:hover, .btn:hover {
   cursor: pointer;
 }
 
-.orderContainer button:hover, .orderContainer i:hover, .orderContainer a:hover {
+.orderContainer button:hover,
+.orderContainer i:hover,
+.orderContainer a:hover {
   color: #c5850f;
 }
 
@@ -283,4 +289,48 @@ footer {
 footer span {
   color: #c5850f;
   font-weight: bold;
+}
+
+/* Media Queries */
+@media (max-width: 930px) {
+  /* Home */
+  .homeHeader h1 {
+    font-size: 1.5rem;
+  }
+  .homeHeader form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  #searchText {
+    width: 150%;
+  }
+  .toughtsContainer figure {
+    max-width: 80%;
+  }
+  .toughtsContainer blockquote {
+    font-size: 1.5rem;
+  }
+}
+.container {
+  min-height: 75vh;
+}
+
+@media (max-width: 540px) {
+  /* Header */
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  #navbar ul {
+    gap: 0.5rem;
+    font-size: 1.2rem;
+  }
+  .toughtFormContainer form {
+    width: 80%;
+  }
+  .toughtFormContainer h1 {
+    width: 80%;
+  }
 }
