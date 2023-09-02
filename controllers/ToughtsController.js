@@ -5,4 +5,7 @@ module.exports = class ToughtsController {
     static async showToughts(req, res) {
         res.render('toughts/home')
     }
+    static async profile(req, res) {
+        res.render('toughts/profile')
+    }
 }
