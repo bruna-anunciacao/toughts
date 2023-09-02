@@ -136,6 +136,62 @@ form input[type='submit']:hover, .btn:hover {
   width: 40%;
 }
 
+/* Perfil */
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+}
+
+.titleContainer h2 {
+  border-left: 4px solid #c5850f;
+  padding: 0.5rem;
+}
+
+.dashboard ul {
+  list-style: none;
+}
+
+.dashboard a {
+  text-decoration: none;
+}
+.dashboard li {
+  padding: 1rem;
+  border-bottom: 1px dashed #c5850f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard .label {
+  font-weight: bold;
+  margin-right: 1rem;
+  text-transform: capitalize;
+  transform: 0.5s;
+}
+
+.dashboard .label:hover {
+  color: #dddddd;
+}
+
+.dashboard .actions {
+  display: flex;
+}
+
+.dashboard .actions .btn {
+  margin-right: 1rem;
+}
+
+.dashboard .actions .btnDelete:hover {
+  background: #c5330f;
+  border: 2px dashed #c5330f;
+}
+.dashboard .actions .btnEdit:hover {
+  background: #08daff;
+  border: 2px dashed #08daff;
+}
+
 /* Footer */
 footer {
   height: 5rem;
