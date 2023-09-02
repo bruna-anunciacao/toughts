@@ -1,9 +1,14 @@
+const { raw } = require("mysql2");
 const Toughts = require("../models/Toughts");
 const User = require("../models/User");
 
 module.exports = class ToughtsController {
   static async showToughts(req, res) {
-    res.render("toughts/home");
+    const toughtsData = await Toughts.findAll({
+      include: User,
+    });
+    const toughts = toughtsData.map((result) => result.get({ plain: true }));
+    res.render("toughts/home", { toughts });
   }
   static async profile(req, res) {
     const userId = req.session.userid;

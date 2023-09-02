@@ -197,6 +197,75 @@ form input[type='submit']:hover, .btn:hover {
   border: 2px dashed #08daff;
 }
 
+/* Home */
+.homeHeader {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.homeHeader p, .homeHeader form {
+  margin-bottom: 1.2rem;
+}
+
+.homeHeader input {
+  border: none;
+  border-bottom: 2px dashed #c5850f;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+#searchText {
+  width: 30rem;
+}
+
+#searchText::placeholder{
+  color: #c5850f;
+}
+
+.orderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto 1rem;
+  gap: 0.8rem;
+}
+
+.orderContainer span {
+  font-weight: bold;
+  color: #fff;
+}
+
+.orderContainer button {
+  margin-bottom: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.orderContainer button:hover, .orderContainer i:hover, .orderContainer a:hover {
+  color: #c5850f;
+}
+
+.toughtsContainer figure {
+  border-bottom: 1px solid #493618;
+  padding: 0.5rem;
+  max-width: 50%;
+  margin: 0 auto 1rem;
+}
+
+.toughtsContainer blockquote {
+  font-style: italic;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.toughtsContainer span {
+  color: #c5850f;
+  font-weight: bold;
+  text-transform: capitalize;
+}
 
 /* Footer */
 footer {
