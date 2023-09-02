@@ -38,4 +38,17 @@ module.exports = class ToughtsController {
       console.log(err);
     }
   }
+  static async removeToughts(req, res) {
+    const id = req.body.id;
+    const UserId = req.session.userid;
+    try{
+      await Toughts.destroy({where: {id: id, UserId: UserId}})
+      req.flash("message", "Pensamento removido!");
+      req.session.save(() => {
+        res.redirect("/toughts/profile");
+      });
+    } catch(err){
+      console.log(err)
+    }
+  }
 };

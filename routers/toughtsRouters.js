@@ -7,6 +7,7 @@ const checkAuth = require("../helpers/auth").checkAuth;
 router.get('/add', checkAuth, ToughtsController.createToughts);
 router.post('/add', checkAuth, ToughtsController.createToughtsSave);
 router.get('/profile', checkAuth, ToughtsController.profile);
+router.post('/remove', checkAuth, ToughtsController.removeToughts)
 router.get("/", ToughtsController.showToughts);
 
 module.exports = router;
