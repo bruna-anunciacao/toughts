@@ -61,7 +61,7 @@
   gap: 1rem;
 }
 
-.authContainer h2 {
+.authContainer h2, .toughtFormContainer h1 {
   color: #fff;
   border-left: 4px solid #c5850f;
   padding-left: 1rem;
@@ -109,6 +109,31 @@ form input[type='submit'], .btn {
 form input[type='submit']:hover, .btn:hover {
   background: #c5850f;
   color: #fff;
+}
+
+/* Criar pensamento */
+
+.toughtFormContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.toughtFormContainer a {
+  color: #c5850f;
+  text-decoration: none;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.toughtFormContainer a:hover {
+  color: #fff;
+}
+
+.toughtFormContainer form, .toughtFormContainer h1 {
+  width: 40%;
 }
 
 /* Footer */

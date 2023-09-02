@@ -8,4 +8,7 @@ module.exports = class ToughtsController {
     static async profile(req, res) {
         res.render('toughts/profile')
     }
+    static createToughts(req, res) {
+        res.render('toughts/create')
+    }
 }
