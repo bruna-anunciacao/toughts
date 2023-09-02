@@ -2,13 +2,29 @@ const { raw } = require("mysql2");
 const Toughts = require("../models/Toughts");
 const User = require("../models/User");
 
+const { Op } = require("sequelize");
+
 module.exports = class ToughtsController {
   static async showToughts(req, res) {
+
+    let search = '';
+    if (req.query.search) {
+      search = req.query.search;
+    }
+
     const toughtsData = await Toughts.findAll({
       include: User,
+      where: {
+        title: {[Op.like]: `%${search}%`}
+      }
     });
     const toughts = toughtsData.map((result) => result.get({ plain: true }));
-    res.render("toughts/home", { toughts });
+    let toughtsQuantity = toughts.length;
+    if (toughtsQuantity === 0) {
+      toughtsQuantity = false;
+    }
+    
+    res.render("toughts/home", { toughts, search, toughtsQuantity });
   }
   static async profile(req, res) {
     const userId = req.session.userid;

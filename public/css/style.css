@@ -206,6 +206,10 @@ form input[type='submit']:hover, .btn:hover {
   align-items: center;
 }
 
+.homeHeader span {
+  color: #c5850f;
+}
+
 .homeHeader p, .homeHeader form {
   margin-bottom: 1.2rem;
 }
